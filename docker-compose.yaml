@@ -1,0 +1,39 @@
+version: "3"
+services:
+  hub:
+    image: selenium/hub:3.12.0
+    ports:
+      - "4444:4444"
+        
+  chrome:
+    image: selenium/node-chrome-debug
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+    
+
+  firefox:
+    image: selenium/node-firefox:3.14
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+    
+      
+  login-module:
+    image: maven-final-2/jenkins
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - MODULE=testng.xml
+      - BROWSER=chrome
+      - SELENIUM_HUB=hub
+    volumes:
+      - /home/user/test_result:/output
+
+
+  
+
+  
