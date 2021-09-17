@@ -23,7 +23,7 @@ public class GoogleTest {
     @BeforeTest
     public void setUp() throws MalformedURLException {
         DesiredCapabilities dc = DesiredCapabilities.chrome();
-        driver = new RemoteWebDriver(new URL("http://165.232.135.90:4444/wd/hub"), dc);
+        driver = new RemoteWebDriver(new URL("http://143.244.176.53:4444/wd/hub"), dc);
        
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    driver.manage().window().maximize();
