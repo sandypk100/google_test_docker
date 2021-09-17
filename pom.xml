@@ -100,7 +100,7 @@
     <configuration>
         <!-- vinsdocker is org name. -->
         <!-- containertest is the name of the image /  application  -->
-        <repository>sandocker/containertest3</repository>
+        <repository>sandockercontainertest3</repository>
         <!-- version of your image: could be sprint11 or release5 etc -->
         <tag>googletest</tag>
     </configuration>
